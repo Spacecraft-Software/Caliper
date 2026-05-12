@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-bellows — GPU compute backend (wgpu / WGSL). Optional, feature-gated.
+# See PRD §6.2.
+
+[package]
+name        = "caliper-bellows"
+description = "GPU compute backend for Caliper — wgpu with WGSL compute shaders."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+wgpu      = { workspace = true }
+bytemuck  = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# Build artifacts
+/target/
+**/target/
+/dist/
+*.bk
+*.orig
+
+# IDE / editor scratch
+.vscode/
+.idea/
+*.swp
+*.swo
+.direnv/
+.envrc.local
+
+# OS scratch
+.DS_Store
+Thumbs.db
+
+# Test scratch
+/tmp/
+*.profraw
+*.profdata
+fuzz/corpus/
+fuzz/artifacts/
+
+# Local-only secrets / overrides
+*.local
+.env
+.env.local
+
+# Generated headers
+/target/include/
+
+# Touchstone model assets (pulled on demand, never committed)
+/assets/models/*
+!/assets/models/.gitkeep
+
+# Local plan / chat exports
+/Chat.txt

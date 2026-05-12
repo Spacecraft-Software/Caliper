@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-burin — Contour tracing (Suzuki-Abe; Visvalingam-Whyatt simplification).
+# See PRD §8.5.
+
+[package]
+name        = "caliper-burin"
+description = "Contour tracing stage for Caliper — Moore-neighbour following with VW simplification."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+caliper-anvil = { workspace = true }
+caliper-etch  = { workspace = true }
+rayon         = { workspace = true }
+thiserror     = { workspace = true }
+
+[lints]
+workspace = true

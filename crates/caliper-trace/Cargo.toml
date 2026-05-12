@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-trace — Public library API surface for Caliper. Re-exports types
+# from internal stage crates. See PRD §11.1.
+
+[package]
+name        = "caliper-trace"
+description = "Public Rust API for the Caliper raster-to-vector tracing engine."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+categories             = ["graphics", "multimedia::images"]
+keywords               = ["vector", "tracing", "svg", "raster"]
+
+[features]
+default  = ["svg"]
+svg      = ["caliper-cast/svg"]
+pdf      = ["caliper-cast/pdf"]
+gpu      = ["caliper-bellows"]
+npu      = ["caliper-touchstone"]
+all      = ["svg", "pdf", "gpu", "npu"]
+
+[dependencies]
+caliper-crucible   = { workspace = true }
+caliper-assayer    = { workspace = true }
+caliper-cast       = { workspace = true }
+caliper-etch       = { workspace = true }
+caliper-anvil      = { workspace = true }
+caliper-bellows    = { workspace = true, optional = true }
+caliper-touchstone = { workspace = true, optional = true }
+thiserror          = { workspace = true }
+image              = { workspace = true }
+serde              = { workspace = true }
+jiff               = { workspace = true }
+
+[dev-dependencies]
+image = { workspace = true, features = ["png"] }
+
+[lints]
+workspace = true

@@ -1,0 +1,203 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Caliper — Rust-native raster-to-vector tracing engine.
+# Workspace manifest. Governed by PRD.md v2.0, PLAN.md v1.0, TODO.md v1.0,
+# The Steelbore Standard v1.2, SFRS v1.0.0.
+
+[workspace]
+resolver = "2"
+members = [
+    "crates/caliper",
+    "crates/caliper-trace",
+    "crates/caliper-crucible",
+    "crates/caliper-assayer",
+    "crates/caliper-smelt",
+    "crates/caliper-etch",
+    "crates/caliper-burin",
+    "crates/caliper-temper",
+    "crates/caliper-weld",
+    "crates/caliper-cast",
+    "crates/caliper-bellows",
+    "crates/caliper-touchstone",
+    "crates/caliper-anvil",
+    "crates/caliper-tui",
+    "xtask",
+]
+# Optional GPU / NPU backends carry heavy native dep trees (wgpu / ort) and
+# are gated behind the `gpu` and `npu` features in `caliper-trace`. We keep
+# them in `members` so `cargo build -p caliper-bellows` still works, but
+# exclude them from `cargo build --workspace` so the CPU-only v0.1.0 surface
+# can be built and tested without dragging in Vulkan or ONNX Runtime.
+default-members = [
+    "crates/caliper",
+    "crates/caliper-trace",
+    "crates/caliper-crucible",
+    "crates/caliper-assayer",
+    "crates/caliper-smelt",
+    "crates/caliper-etch",
+    "crates/caliper-burin",
+    "crates/caliper-temper",
+    "crates/caliper-weld",
+    "crates/caliper-cast",
+    "crates/caliper-anvil",
+    "crates/caliper-tui",
+    "xtask",
+]
+
+[workspace.package]
+version = "0.1.0"
+# PRD §2 declared Edition 2024 + MSRV 1.82.0, which is inconsistent —
+# Edition 2024 stabilised in Rust 1.85. We resolve in favour of Edition 2024
+# (the PRD's substantive intent) and document the MSRV correction here.
+edition = "2024"
+rust-version = "1.88.0"
+authors = ["Mohamed Hammad <Mohamed.Hammad@Steelbore.com>"]
+license = "GPL-3.0-or-later"
+repository = "https://github.com/UnbreakableMJ/caliper"
+homepage = "https://Caliper.Steelbore.com/"
+documentation = "https://Caliper.Steelbore.com/docs/"
+readme = "README.md"
+categories = ["graphics", "command-line-utilities", "multimedia::images"]
+keywords = ["vector", "svg", "tracing", "vectorization", "raster"]
+
+[workspace.dependencies]
+# Workspace members re-listed so any member can pull in a sibling
+# via `caliper-anvil = { workspace = true }`.
+caliper-trace      = { path = "crates/caliper-trace",      version = "0.1.0" }
+caliper-crucible   = { path = "crates/caliper-crucible",   version = "0.1.0" }
+caliper-assayer    = { path = "crates/caliper-assayer",    version = "0.1.0" }
+caliper-smelt      = { path = "crates/caliper-smelt",      version = "0.1.0" }
+caliper-etch       = { path = "crates/caliper-etch",       version = "0.1.0" }
+caliper-burin      = { path = "crates/caliper-burin",      version = "0.1.0" }
+caliper-temper     = { path = "crates/caliper-temper",     version = "0.1.0" }
+caliper-weld       = { path = "crates/caliper-weld",       version = "0.1.0" }
+caliper-cast       = { path = "crates/caliper-cast",       version = "0.1.0" }
+caliper-bellows    = { path = "crates/caliper-bellows",    version = "0.1.0" }
+caliper-touchstone = { path = "crates/caliper-touchstone", version = "0.1.0" }
+caliper-anvil      = { path = "crates/caliper-anvil",      version = "0.1.0" }
+caliper-tui        = { path = "crates/caliper-tui",        version = "0.1.0" }
+
+# Third-party deps from PRD §16. Pinned at workspace level so every crate
+# uses the same version. Adding a dep here is the only way to add one.
+anyhow      = "1.0"
+thiserror   = "2.0"
+blake3      = "1.5"
+bumpalo     = "3.16"
+bytemuck    = { version = "1.18", features = ["derive"] }
+clap        = { version = "4.5", features = ["derive", "env", "wrap_help"] }
+crossbeam   = "0.8"
+crossterm   = "0.28"
+image       = { version = "0.25", default-features = false, features = [
+    "png", "jpeg", "bmp", "webp", "tiff", "qoi", "tga", "pnm", "ico", "dds",
+    "ff", "exr", "hdr",
+    # AVIF (`avif-native` → dav1d-sys → pkg-config + libdav1d) is deferred to
+    # v0.5.0. Will land via pure-Rust `rav1d` to keep the build hermetic.
+] }
+jiff        = { version = "0.1", features = ["serde"] }
+ndarray     = "0.16"
+ort         = { version = "2.0.0-rc.4", default-features = false, features = [
+    "ndarray",
+] }
+pdf-writer  = "0.12"
+quick-xml   = { version = "0.36", features = ["serialize"] }
+ratatui     = "0.28"
+rayon       = "1.10"
+rmcp        = "0.1"
+schemars    = { version = "0.8", features = ["preserve_order"] }
+serde       = { version = "1.0", features = ["derive"] }
+serde_json  = { version = "1.0", features = ["preserve_order"] }
+serde_yaml  = "0.9"
+tracing     = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+wgpu        = "22.1"
+
+# Dev / bench deps
+criterion   = { version = "0.5", features = ["html_reports"] }
+insta       = { version = "1.40", features = ["yaml"] }
+proptest    = "1.5"
+
+# Cross-cutting compiler lints (Microsoft Pragmatic Rust Guidelines, M-STATIC-VERIFICATION).
+# Per-crate `[lints]` tables inherit these via `lints.workspace = true`.
+[workspace.lints.rust]
+ambiguous_negative_literals    = "warn"
+missing_debug_implementations  = "warn"
+redundant_imports              = "warn"
+redundant_lifetimes            = "warn"
+trivial_numeric_casts          = "warn"
+unsafe_op_in_unsafe_fn         = "warn"
+unused_lifetimes               = "warn"
+
+[workspace.lints.clippy]
+cargo       = { level = "warn", priority = -1 }
+complexity  = { level = "warn", priority = -1 }
+correctness = { level = "warn", priority = -1 }
+pedantic    = { level = "warn", priority = -1 }
+perf        = { level = "warn", priority = -1 }
+style       = { level = "warn", priority = -1 }
+suspicious  = { level = "warn", priority = -1 }
+
+allow_attributes_without_reason  = "warn"
+as_pointer_underscore            = "warn"
+assertions_on_result_states      = "warn"
+clone_on_ref_ptr                 = "warn"
+deref_by_slicing                 = "warn"
+disallowed_script_idents         = "warn"
+empty_drop                       = "warn"
+empty_enum_variants_with_brackets = "warn"
+empty_structs_with_brackets      = "warn"
+fn_to_numeric_cast_any           = "warn"
+if_then_some_else_none           = "warn"
+map_err_ignore                   = "warn"
+redundant_type_annotations       = "warn"
+renamed_function_params          = "warn"
+semicolon_outside_block          = "warn"
+string_to_string                 = "warn"
+undocumented_unsafe_blocks       = "warn"
+unnecessary_safety_comment       = "warn"
+unnecessary_safety_doc           = "warn"
+unneeded_field_pattern           = "warn"
+unused_result_ok                 = "warn"
+
+# Tracing macros run afoul of the formatting-args lint; tolerate them.
+literal_string_with_formatting_args = "allow"
+
+# Multiple-crate-versions fires constantly across any workspace pulling
+# clap+image+wgpu+ort+ratatui (rand, syn, hashbrown, getrandom, …).
+# It's a useful awareness lint but not a CI gate worth blocking on.
+multiple_crate_versions = "allow"
+
+# Build profiles — mirror PRD §14.1.
+[profile.dev]
+opt-level = 0
+debug = true
+incremental = true
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+panic = "abort"
+debug = false
+
+# `target-cpu=native` is a per-developer override; configured via
+# `.cargo/config.toml` rather than profile flags so cross-builds stay clean.
+[profile.release-native]
+inherits = "release"
+
+[profile.release-portable]
+inherits = "release"
+
+[profile.release-avx]
+inherits = "release"
+
+[profile.release-avx512]
+inherits = "release"
+
+# Faster fuzz iteration without losing all optimisation.
+[profile.fuzz]
+inherits = "release"
+opt-level = 3
+lto = false
+codegen-units = 16
+debug = true

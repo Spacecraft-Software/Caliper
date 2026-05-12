@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-assayer — Adaptive pipeline router. Measures input characteristics and
+# emits a `PipelineConfig`. See PRD §7.2.
+
+[package]
+name        = "caliper-assayer"
+description = "Adaptive pipeline router for Caliper — measures inputs and routes to optimal config."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+caliper-anvil = { workspace = true }
+thiserror     = { workspace = true }
+image         = { workspace = true }
+serde         = { workspace = true }
+serde_json    = { workspace = true }
+
+[lints]
+workspace = true

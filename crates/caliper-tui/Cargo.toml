@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-tui — Ratatui interface for `--format explore`. See PRD §10.
+
+[package]
+name        = "caliper-tui"
+description = "Interactive TUI for Caliper — ratatui + crossterm with Steelbore theme."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+caliper-trace = { workspace = true }
+ratatui       = { workspace = true }
+crossterm     = { workspace = true }
+thiserror     = { workspace = true }
+
+[dev-dependencies]
+insta = { workspace = true }
+
+[lints]
+workspace = true

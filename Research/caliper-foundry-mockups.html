@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Caliper Foundry — Visual Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     Caliper Foundry — Visual Mockup Sheet
+     Steelbore Standard v1.0 palette + typography
+     ============================================================ */
+  :root {
+    --void-navy:      #000027;
+    --molten-amber:   #D98E32;
+    --steel-blue:     #4B7EB0;
+    --steel-blue-dim: #2E4D6D;
+    --radium-green:   #50FA7B;
+    --liquid-coolant: #8BE9FD;
+    --red-oxide:      #FF5C5C;
+    --panel:          #060A2E;
+    --panel-2:        #0B1240;
+    --line:           #1C2A55;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--void-navy);
+    color: var(--molten-amber);
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  h1, h2, h3 { font-family: 'Share Tech Mono', monospace; margin: 0; font-weight: 400; }
+  h1 { color: var(--steel-blue);     font-size: 28px; letter-spacing: 1px; }
+  h2 { color: var(--radium-green);   font-size: 20px; letter-spacing: 0.5px; }
+  h3 { color: var(--liquid-coolant); font-size: 16px; font-style: italic; }
+
+  .page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+  .page > header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--steel-blue-dim);
+  }
+  .page > header p { color: var(--liquid-coolant); margin-top: 12px; }
+
+  .meta-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 32px;
+    font-size: 13px;
+  }
+  .meta-table th, .meta-table td {
+    padding: 8px 12px;
+    border: 1px solid var(--steel-blue-dim);
+    text-align: left;
+  }
+  .meta-table th {
+    background: var(--panel);
+    color: var(--radium-green);
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .section {
+    margin: 64px 0;
+    padding: 32px 24px;
+    background: var(--panel);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 8px;
+  }
+  .section header { margin-bottom: 24px; }
+  .section header p { margin-top: 8px; color: var(--liquid-coolant); }
+
+  /* ---------- Mockup chrome shells ---------- */
+
+  /* Browser chrome (web mockup) */
+  .browser {
+    background: var(--panel-2);
+    border: 1px solid var(--steel-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #04081f;
+    border-bottom: 1px solid var(--line);
+  }
+  .browser-bar .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot.r { background: var(--red-oxide); }
+  .dot.y { background: var(--molten-amber); }
+  .dot.g { background: var(--radium-green); }
+  .url-bar {
+    flex: 1;
+    background: var(--void-navy);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 4px;
+    padding: 6px 12px;
+    color: var(--liquid-coolant);
+    font-size: 12px;
+    margin-left: 16px;
+  }
+  .url-bar::before { content: '🔒 '; color: var(--radium-green); }
+
+  /* Web layout */
+  .web-app {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 640px;
+    background: var(--void-navy);
+  }
+  .web-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .web-logo {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 18px;
+    color: var(--steel-blue);
+    letter-spacing: 2px;
+  }
+  .web-logo .accent { color: var(--molten-amber); }
+  .web-nav { display: flex; gap: 20px; font-size: 12px; }
+  .web-nav a { color: var(--molten-amber); text-decoration: none; }
+  .web-nav a.active { color: var(--radium-green); border-bottom: 1px solid var(--radium-green); padding-bottom: 4px; }
+
+  .web-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px; }
+  .canvas {
+    background: #02041a;
+    border: 1px dashed var(--steel-blue-dim);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+    overflow: hidden;
+  }
+  .canvas-label {
+    position: absolute;
+    margin-top: -340px;
+    margin-left: 12px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--liquid-coolant);
+    letter-spacing: 1px;
+  }
+  .canvas-wrap { position: relative; }
+
+  .web-footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+    padding: 14px 24px;
+    border-top: 1px solid var(--line);
+    background: #02041a;
+  }
+  .params { display: flex; gap: 16px; font-size: 12px; flex-wrap: wrap; }
+  .param-pill {
+    background: var(--panel);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 12px;
+    padding: 4px 10px;
+    color: var(--molten-amber);
+  }
+  .param-pill .lab { color: var(--liquid-coolant); }
+  .param-pill .val { color: var(--radium-green); margin-left: 6px; }
+
+  .btn {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--molten-amber);
+    color: var(--void-navy);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .btn.primary { background: var(--radium-green); color: var(--void-navy); }
+  .btn.ghost   { background: transparent; color: var(--liquid-coolant); border: 1px solid var(--steel-blue-dim); }
+
+  .cabinet {
+    display: flex; gap: 8px; padding: 8px 24px;
+    border-top: 1px solid var(--line);
+    background: #02041a;
+  }
+  .thumb {
+    width: 56px; height: 40px;
+    background: var(--panel);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; color: var(--steel-blue);
+  }
+  .thumb.active { border-color: var(--radium-green); }
+
+  /* Desktop mockup */
+  .desktop {
+    background: var(--panel-2);
+    border: 1px solid var(--steel-blue);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .titlebar {
+    display: flex; align-items: center;
+    padding: 8px 12px;
+    background: #04081f;
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--liquid-coolant);
+    letter-spacing: 1px;
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .titlebar .traffic { display: flex; gap: 6px; margin-right: 16px; }
+  .titlebar .traffic .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .titlebar .title { flex: 1; text-align: center; }
+  .titlebar .right { color: var(--steel-blue); font-size: 10px; }
+
+  .desk-tabs {
+    display: flex;
+    gap: 1px;
+    background: #04081f;
+    border-bottom: 1px solid var(--line);
+    padding: 0 8px;
+  }
+  .desk-tab {
+    padding: 8px 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-bottom: none;
+    color: var(--molten-amber);
+    font-size: 11px;
+    cursor: pointer;
+    margin-top: 4px;
+    border-radius: 4px 4px 0 0;
+  }
+  .desk-tab.active { background: var(--void-navy); color: var(--radium-green); border-color: var(--radium-green); }
+  .desk-tab .x { margin-left: 8px; color: var(--steel-blue); }
+
+  .desk-body { display: grid; grid-template-columns: 220px 1fr 220px; min-height: 420px; }
+  .left-rail, .right-rail {
+    background: #02041a;
+    border-right: 1px solid var(--line);
+    padding: 12px;
+    font-size: 11px;
+  }
+  .right-rail { border-right: none; border-left: 1px solid var(--line); }
+  .rail-section { margin-bottom: 20px; }
+  .rail-title {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--steel-blue);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--steel-blue-dim);
+    padding-bottom: 4px;
+  }
+  .rail-row {
+    display: flex; justify-content: space-between;
+    padding: 4px 0;
+    color: var(--molten-amber);
+  }
+  .rail-row .v { color: var(--radium-green); }
+  .rail-row.warn .v { color: var(--molten-amber); }
+
+  .desk-canvas {
+    background: var(--void-navy);
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .desk-statusbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 16px;
+    background: #04081f;
+    border-top: 1px solid var(--line);
+    font-size: 10px;
+    color: var(--liquid-coolant);
+    letter-spacing: 1px;
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .hw-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 8px;
+    margin-right: 6px;
+    color: var(--radium-green);
+  }
+  .hw-pill.npu { color: var(--liquid-coolant); }
+
+  /* Mobile mockup */
+  .phones { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; justify-items: center; }
+  .phone {
+    width: 320px; height: 640px;
+    background: #000;
+    border: 12px solid #111;
+    border-radius: 36px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+    overflow: hidden;
+    position: relative;
+  }
+  .phone .notch {
+    position: absolute; top: 6px; left: 50%;
+    transform: translateX(-50%);
+    width: 110px; height: 22px;
+    background: #000;
+    border-radius: 0 0 12px 12px;
+    z-index: 10;
+  }
+  .phone .screen {
+    width: 100%; height: 100%;
+    background: var(--void-navy);
+    display: flex; flex-direction: column;
+  }
+  .status-bar {
+    padding: 14px 22px 6px;
+    display: flex; justify-content: space-between;
+    font-size: 11px;
+    color: var(--liquid-coolant);
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .app-header {
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .app-header h2 { font-size: 18px; }
+  .app-header .sub { font-size: 11px; color: var(--liquid-coolant); margin-top: 2px; }
+  .app-body { flex: 1; padding: 14px; overflow: hidden; }
+  .drop-zone {
+    border: 2px dashed var(--steel-blue);
+    border-radius: 12px;
+    padding: 36px 16px;
+    text-align: center;
+    color: var(--liquid-coolant);
+    font-size: 12px;
+  }
+  .drop-zone .big { font-size: 32px; color: var(--steel-blue); margin-bottom: 8px; }
+  .action-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .action-card {
+    background: var(--panel);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 8px;
+    padding: 14px 10px;
+    text-align: center;
+    font-size: 11px;
+  }
+  .action-card .icon {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 22px;
+    color: var(--radium-green);
+    margin-bottom: 6px;
+  }
+  .action-card .lab { color: var(--molten-amber); }
+  .nav-tabs {
+    display: flex; justify-content: space-around;
+    padding: 8px 0 16px;
+    border-top: 1px solid var(--line);
+    background: #02041a;
+  }
+  .nav-item {
+    display: flex; flex-direction: column; align-items: center;
+    font-size: 9px;
+    color: var(--steel-blue);
+  }
+  .nav-item .icon { font-size: 16px; }
+  .nav-item.active { color: var(--radium-green); }
+
+  /* Mobile result screen */
+  .result-stack { display: flex; flex-direction: column; gap: 8px; height: 100%; }
+  .result-card {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .card-head {
+    display: flex; justify-content: space-between;
+    padding: 8px 12px;
+    background: #02041a;
+    border-bottom: 1px solid var(--line);
+    font-size: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--liquid-coolant);
+    letter-spacing: 1px;
+  }
+  .card-head .badge { color: var(--radium-green); }
+  .card-body { flex: 1; display: flex; align-items: center; justify-content: center; }
+  .metrics-row {
+    display: flex; justify-content: space-around;
+    padding: 8px 0;
+    background: var(--panel);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 8px;
+    font-size: 10px;
+  }
+  .metric .lab { color: var(--liquid-coolant); display: block; }
+  .metric .val { color: var(--radium-green); font-family: 'Share Tech Mono', monospace; font-size: 14px; }
+  .export-row { display: flex; gap: 8px; padding-top: 6px; }
+  .export-row .btn { flex: 1; font-size: 10px; padding: 8px 6px; letter-spacing: 0.5px; }
+
+  /* Bot mockup */
+  .chat {
+    background: var(--panel-2);
+    border: 1px solid var(--steel-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 720px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .chat-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px;
+    background: #04081f;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .chat-head .avatar {
+    width: 36px; height: 36px;
+    background: var(--molten-amber);
+    color: var(--void-navy);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .chat-head .name { color: var(--steel-blue); font-size: 14px; }
+  .chat-head .status { color: var(--radium-green); font-size: 10px; }
+  .chat-body { padding: 18px; min-height: 420px; background: var(--void-navy); }
+
+  .msg { display: flex; gap: 10px; margin-bottom: 14px; }
+  .msg .who {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+  }
+  .msg.user .who { background: var(--steel-blue); color: var(--void-navy); }
+  .msg.bot  .who { background: var(--radium-green); color: var(--void-navy); }
+  .msg .body {
+    background: var(--panel);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: var(--molten-amber);
+    font-size: 13px;
+    max-width: 80%;
+  }
+  .msg.user .body { background: var(--panel-2); }
+  .msg.bot  .body code,
+  .msg.bot  .body .file {
+    display: inline-block;
+    background: var(--void-navy);
+    border: 1px solid var(--steel-blue);
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: var(--liquid-coolant);
+    font-size: 12px;
+    margin: 4px 4px 4px 0;
+  }
+  .msg.bot .file::before { content: '📎 '; color: var(--radium-green); }
+  .msg .meta {
+    font-size: 10px;
+    color: var(--steel-blue);
+    margin-top: 4px;
+  }
+  .chat-input {
+    display: flex; gap: 8px; align-items: center;
+    padding: 12px 16px;
+    background: #04081f;
+    border-top: 1px solid var(--line);
+  }
+  .chat-input input {
+    flex: 1;
+    background: var(--void-navy);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 18px;
+    padding: 8px 14px;
+    color: var(--molten-amber);
+    font-family: 'Inconsolata', monospace;
+    font-size: 13px;
+  }
+  .chat-input input::placeholder { color: var(--steel-blue); }
+
+  /* Caption block under each mockup */
+  .caption {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(75, 126, 176, 0.08);
+    border-left: 3px solid var(--steel-blue);
+    border-radius: 0 4px 4px 0;
+    color: var(--liquid-coolant);
+    font-size: 12px;
+  }
+  .caption strong { color: var(--radium-green); font-family: 'Share Tech Mono', monospace; }
+
+  /* Architecture diagram */
+  .arch {
+    background: var(--panel);
+    border: 1px solid var(--steel-blue-dim);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+  .arch pre {
+    color: var(--molten-amber);
+    font-family: 'Inconsolata', 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre;
+  }
+
+  /* SVG illustration palette */
+  .palette-strip {
+    display: flex;
+    height: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 16px;
+    border: 1px solid var(--steel-blue-dim);
+  }
+  .palette-strip > div {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--steel-blue-dim);
+    color: var(--steel-blue);
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 2px;
+    font-size: 11px;
+  }
+  footer .forge { color: var(--molten-amber); }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>CALIPER FOUNDRY</h1>
+  <p>Visual Mockup Sheet — v1.0 — 2026-05-04</p>
+  <p style="color:var(--molten-amber);font-size:12px">User-facing layer over the Caliper raster-to-vector tracing engine</p>
+</header>
+
+<table class="meta-table">
+  <tr><th>Steelbore palette</th><td>
+    <span style="color:var(--molten-amber)">Molten Amber #D98E32</span> ·
+    <span style="color:var(--steel-blue)">Steel Blue #4B7EB0</span> ·
+    <span style="color:var(--radium-green)">Radium Green #50FA7B</span> ·
+    <span style="color:var(--liquid-coolant)">Liquid Coolant #8BE9FD</span> ·
+    <span style="color:var(--red-oxide)">Red Oxide #FF5C5C</span>
+  </td></tr>
+  <tr><th>Background</th><td>Void Navy #000027 (mandatory per Standard §8)</td></tr>
+  <tr><th>Typography</th><td>Headings: Share Tech Mono · Body: Inconsolata (both OFL)</td></tr>
+  <tr><th>Platforms shown</th><td>Web (PWA) · Desktop (Tauri 2.x) · Mobile (Flutter) · Bot (chat)</td></tr>
+</table>
+
+<div class="palette-strip">
+  <div style="background:#000027;color:#D98E32">#000027</div>
+  <div style="background:#D98E32;color:#000027">#D98E32</div>
+  <div style="background:#4B7EB0;color:#000027">#4B7EB0</div>
+  <div style="background:#50FA7B;color:#000027">#50FA7B</div>
+  <div style="background:#8BE9FD;color:#000027">#8BE9FD</div>
+  <div style="background:#FF5C5C;color:#000027">#FF5C5C</div>
+</div>
+
+<!-- ======================================================== -->
+<!-- 1. WEB MOCKUP                                            -->
+<!-- ======================================================== -->
+<section class="section">
+  <header>
+    <h2>1. Web — caliper-foundry-web (PWA at foundry.caliper.dev)</h2>
+    <p>Leptos + WASM build of the Caliper engine. WebGPU acceleration when available. No telemetry, no third-party scripts.</p>
+  </header>
+
+  <div class="browser">
+    <div class="browser-bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <div class="url-bar">https://foundry.caliper.dev/trace</div>
+    </div>
+    <div class="web-app">
+      <div class="web-header">
+        <div class="web-logo">CALIPER<span class="accent">·</span>FOUNDRY</div>
+        <nav class="web-nav">
+          <a href="#" class="active">Trace</a>
+          <a href="#">Upscale</a>
+          <a href="#">Combine</a>
+          <a href="#">Cabinet</a>
+          <a href="#">Help</a>
+        </nav>
+      </div>
+
+      <div class="web-body">
+        <div class="canvas-wrap">
+          <span class="canvas-label">SOURCE · 1024 × 1024 PNG · 64 KB</span>
+          <div class="canvas">
+            <!-- Source raster: stylized "logo" demo -->
+            <svg width="280" height="280" viewBox="0 0 100 100">
+              <defs>
+                <pattern id="px" width="6" height="6" patternUnits="userSpaceOnUse">
+                  <rect width="6" height="6" fill="#0a1240"/>
+                  <rect width="3" height="3" fill="#0e1a52"/>
+                  <rect x="3" y="3" width="3" height="3" fill="#0e1a52"/>
+                </pattern>
+              </defs>
+              <rect width="100" height="100" fill="url(#px)"/>
+              <circle cx="50" cy="50" r="32" fill="#D98E32" opacity="0.95"/>
+              <circle cx="50" cy="50" r="22" fill="#4B7EB0"/>
+              <polygon points="50,32 60,52 50,68 40,52" fill="#50FA7B"/>
+              <circle cx="50" cy="50" r="6" fill="#000027"/>
+            </svg>
+          </div>
+        </div>
+        <div class="canvas-wrap">
+          <span class="canvas-label">VECTOR · 47 SHAPES · 18.4 KB SVG</span>
+          <div class="canvas" style="background:#000027">
+            <svg width="280" height="280" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="32" fill="none" stroke="#D98E32" stroke-width="0.8"/>
+              <circle cx="50" cy="50" r="22" fill="none" stroke="#4B7EB0" stroke-width="0.8"/>
+              <polygon points="50,32 60,52 50,68 40,52" fill="none" stroke="#50FA7B" stroke-width="0.8"/>
+              <circle cx="50" cy="50" r="6" fill="none" stroke="#8BE9FD" stroke-width="0.8"/>
+              <!-- node dots (path control points) -->
+              <g fill="#50FA7B">
+                <circle cx="50" cy="32" r="0.8"/>
+                <circle cx="60" cy="52" r="0.8"/>
+                <circle cx="50" cy="68" r="0.8"/>
+                <circle cx="40" cy="52" r="0.8"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="web-footer">
+        <div class="params">
+          <span class="param-pill"><span class="lab">Class</span><span class="val">Logo</span></span>
+          <span class="param-pill"><span class="lab">Colors</span><span class="val">16</span></span>
+          <span class="param-pill"><span class="lab">Mode</span><span class="val">Spline</span></span>
+          <span class="param-pill"><span class="lab">Primitives</span><span class="val">On</span></span>
+          <span class="param-pill"><span class="lab">Compute</span><span class="val">WebGPU</span></span>
+          <span class="param-pill"><span class="lab">Elapsed</span><span class="val">412 ms</span></span>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn ghost">Tweak…</button>
+          <button class="btn primary">Export SVG</button>
+        </div>
+      </div>
+
+      <div class="cabinet">
+        <div class="thumb active">●</div>
+        <div class="thumb">PNG</div>
+        <div class="thumb">JPG</div>
+        <div class="thumb">WEB</div>
+        <div class="thumb">PNG</div>
+        <div class="thumb">SVG</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption">
+    <strong>Notes.</strong> Side-by-side preview, parameter pills, hardware-aware "Compute on" selector
+    (CPU / WebGPU / Cloud). The Cabinet strip at the bottom holds the user's last 20 jobs in browser
+    IndexedDB. Strict CSP <code style="color:var(--liquid-coolant)">script-src 'self' 'wasm-unsafe-eval'</code>;
+    no third-party scripts, no analytics. The site at <em>foundry.caliper.dev</em> is the same WASM bundle
+    a user can download and host locally.
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- 2. DESKTOP MOCKUP                                        -->
+<!-- ======================================================== -->
+<section class="section">
+  <header>
+    <h2>2. Desktop — caliper-foundry-desktop (Tauri 2.x)</h2>
+    <p>Native Rust shell. Direct GPU + NPU access. Multi-document tabs, full path editor, hardware monitor, MCP server toggle.</p>
+  </header>
+
+  <div class="desktop">
+    <div class="titlebar">
+      <div class="traffic">
+        <span class="dot r" style="background:var(--red-oxide)"></span>
+        <span class="dot y" style="background:var(--molten-amber)"></span>
+        <span class="dot g" style="background:var(--radium-green)"></span>
+      </div>
+      <div class="title">CALIPER FOUNDRY — logo.png · photo.jpg · scan.tif</div>
+      <div class="right">v1.0.0 · build 2026.05.04</div>
+    </div>
+
+    <div class="desk-tabs">
+      <div class="desk-tab active">logo.png<span class="x">×</span></div>
+      <div class="desk-tab">photo.jpg<span class="x">×</span></div>
+      <div class="desk-tab">scan.tif<span class="x">×</span></div>
+      <div class="desk-tab" style="color:var(--liquid-coolant)">+ Open</div>
+    </div>
+
+    <div class="desk-body">
+      <!-- Left rail: layers + history -->
+      <aside class="left-rail">
+        <div class="rail-section">
+          <div class="rail-title">Layers (4)</div>
+          <div class="rail-row"><span>● Background</span><span class="v">#D98E32</span></div>
+          <div class="rail-row"><span>● Ring</span><span class="v">#4B7EB0</span></div>
+          <div class="rail-row"><span>● Diamond</span><span class="v">#50FA7B</span></div>
+          <div class="rail-row"><span>● Center</span><span class="v">#000027</span></div>
+        </div>
+        <div class="rail-section">
+          <div class="rail-title">Assayer</div>
+          <div class="rail-row"><span>Image class</span><span class="v">Logo</span></div>
+          <div class="rail-row"><span>Effective k</span><span class="v">16</span></div>
+          <div class="rail-row"><span>Edge density</span><span class="v">High</span></div>
+          <div class="rail-row"><span>Symmetry</span><span class="v">4-fold</span></div>
+        </div>
+        <div class="rail-section">
+          <div class="rail-title">History</div>
+          <div class="rail-row"><span>14:30:01</span><span class="v">trace</span></div>
+          <div class="rail-row"><span>14:31:18</span><span class="v">tweak k=12</span></div>
+          <div class="rail-row"><span>14:31:42</span><span class="v">undo</span></div>
+        </div>
+      </aside>
+
+      <!-- Center: dual-pane preview -->
+      <div class="desk-canvas">
+        <div class="canvas-wrap">
+          <span class="canvas-label">SOURCE · 4096 × 4096 PNG</span>
+          <div class="canvas">
+            <svg width="220" height="220" viewBox="0 0 100 100">
+              <defs>
+                <radialGradient id="src-glow" cx="50%" cy="50%">
+                  <stop offset="0%" stop-color="#D98E32" stop-opacity="1"/>
+                  <stop offset="100%" stop-color="#4B7EB0" stop-opacity="0.3"/>
+                </radialGradient>
+              </defs>
+              <rect width="100" height="100" fill="#02041a"/>
+              <circle cx="50" cy="50" r="30" fill="url(#src-glow)"/>
+              <polygon points="50,28 65,50 50,72 35,50" fill="#50FA7B"/>
+              <circle cx="50" cy="50" r="5" fill="#000027"/>
+            </svg>
+          </div>
+        </div>
+        <div class="canvas-wrap">
+          <span class="canvas-label">TRACED · 47 SHAPES · 4× UPSCALE</span>
+          <div class="canvas">
+            <svg width="220" height="220" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="30" fill="none" stroke="#D98E32" stroke-width="0.5"/>
+              <circle cx="50" cy="50" r="22" fill="none" stroke="#4B7EB0" stroke-width="0.5"/>
+              <polygon points="50,28 65,50 50,72 35,50" fill="none" stroke="#50FA7B" stroke-width="0.5"/>
+              <circle cx="50" cy="50" r="5" fill="none" stroke="#8BE9FD" stroke-width="0.5"/>
+              <!-- bezier handles -->
+              <g stroke="#FF5C5C" stroke-width="0.2" fill="none">
+                <line x1="50" y1="28" x2="56" y2="22"/>
+                <line x1="65" y1="50" x2="71" y2="56"/>
+                <line x1="50" y1="72" x2="44" y2="78"/>
+                <line x1="35" y1="50" x2="29" y2="44"/>
+              </g>
+              <g fill="#50FA7B">
+                <circle cx="50" cy="28" r="0.6"/>
+                <circle cx="65" cy="50" r="0.6"/>
+                <circle cx="50" cy="72" r="0.6"/>
+                <circle cx="35" cy="50" r="0.6"/>
+              </g>
+              <g fill="#FF5C5C">
+                <circle cx="56" cy="22" r="0.4"/>
+                <circle cx="71" cy="56" r="0.4"/>
+                <circle cx="44" cy="78" r="0.4"/>
+                <circle cx="29" cy="44" r="0.4"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right rail: parameters + hardware -->
+      <aside class="right-rail">
+        <div class="rail-section">
+          <div class="rail-title">Parameters</div>
+          <div class="rail-row"><span>colors</span><span class="v">16</span></div>
+          <div class="rail-row"><span>mode</span><span class="v">spline</span></div>
+          <div class="rail-row"><span>simplify</span><span class="v">1.0 px</span></div>
+          <div class="rail-row"><span>corner θ</span><span class="v">60°</span></div>
+          <div class="rail-row"><span>primitives</span><span class="v">on</span></div>
+          <div class="rail-row"><span>symmetry</span><span class="v">auto</span></div>
+        </div>
+        <div class="rail-section">
+          <div class="rail-title">Output</div>
+          <div class="rail-row"><span>format</span><span class="v">SVG 1.1</span></div>
+          <div class="rail-row"><span>precision</span><span class="v">3</span></div>
+          <div class="rail-row"><span>shapes</span><span class="v">47</span></div>
+          <div class="rail-row"><span>max dev</span><span class="v">0.42 px</span></div>
+          <div class="rail-row"><span>size</span><span class="v">18.4 KB</span></div>
+        </div>
+        <div class="rail-section">
+          <div class="rail-title">Stages (ms)</div>
+          <div class="rail-row"><span>decode</span><span class="v">12</span></div>
+          <div class="rail-row"><span>quantize</span><span class="v">38</span></div>
+          <div class="rail-row"><span>edge</span><span class="v">24</span></div>
+          <div class="rail-row"><span>trace</span><span class="v">41</span></div>
+          <div class="rail-row"><span>fit</span><span class="v">58</span></div>
+          <div class="rail-row"><span>cast</span><span class="v">6</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="desk-statusbar">
+      <div>
+        <span class="hw-pill">CPU 28%</span>
+        <span class="hw-pill">GPU 64%</span>
+        <span class="hw-pill npu">NPU 12%</span>
+        <span class="hw-pill">RAM 412 MB</span>
+        <span class="hw-pill">SIMD AVX2</span>
+      </div>
+      <div>MCP server: <span style="color:var(--radium-green)">ON</span> · localhost:7421</div>
+    </div>
+  </div>
+
+  <div class="caption">
+    <strong>Notes.</strong> Three-pane layout: layers + Assayer + history on the left, dual-pane preview centre,
+    parameters + output + per-stage timings on the right. Status bar shows live CPU / GPU / NPU utilization
+    and the active SIMD level. The MCP-server toggle in the status bar exposes the desktop app as an MCP
+    endpoint on <code style="color:var(--liquid-coolant)">localhost:7421</code> — drop in <em>Claude Code</em>,
+    <em>Codex CLI</em>, or any agent. Dual CUA + Vim keybindings (Standard §7).
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- 3. MOBILE MOCKUP                                         -->
+<!-- ======================================================== -->
+<section class="section">
+  <header>
+    <h2>3. Mobile — caliper-foundry-mobile (Flutter + Rust FFI)</h2>
+    <p>iOS + Android from one codebase. CoreML / NNAPI / QNN for NPU. Battery-aware queue. Share-extension entry points.</p>
+  </header>
+
+  <div class="phones">
+    <!-- Phone 1: Home / picker -->
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="screen">
+        <div class="status-bar">
+          <span>14:30</span>
+          <span>●●● 5G · 87%</span>
+        </div>
+        <div class="app-header">
+          <h2>Caliper Foundry</h2>
+          <div class="sub">Local processing · 0 jobs queued</div>
+        </div>
+        <div class="app-body">
+          <div class="drop-zone">
+            <div class="big">＋</div>
+            Drop, paste, or tap to pick<br>an image to begin.
+          </div>
+          <div class="action-row">
+            <div class="action-card">
+              <div class="icon">▱→ ◇</div>
+              <div class="lab">Vectorize</div>
+            </div>
+            <div class="action-card">
+              <div class="icon">▱ ↑×4</div>
+              <div class="lab">Upscale</div>
+            </div>
+            <div class="action-card">
+              <div class="icon">▱→◇↑</div>
+              <div class="lab">Combine</div>
+            </div>
+            <div class="action-card">
+              <div class="icon">⊞</div>
+              <div class="lab">Cabinet</div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-tabs">
+          <div class="nav-item active">
+            <div class="icon">◉</div>
+            <div>Trace</div>
+          </div>
+          <div class="nav-item">
+            <div class="icon">▱↑</div>
+            <div>Upscale</div>
+          </div>
+          <div class="nav-item">
+            <div class="icon">⊞</div>
+            <div>Cabinet</div>
+          </div>
+          <div class="nav-item">
+            <div class="icon">⚙</div>
+            <div>Settings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone 2: Result -->
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="screen">
+        <div class="status-bar">
+          <span>14:30</span>
+          <span>●●● 5G · 87%</span>
+        </div>
+        <div class="app-header">
+          <h2>Result</h2>
+          <div class="sub" style="color:var(--radium-green)">✓ Done in 412 ms · NPU (CoreML)</div>
+        </div>
+        <div class="app-body">
+          <div class="result-stack">
+            <div class="result-card">
+              <div class="card-head">
+                <span>SOURCE · 1024 × 1024</span>
+                <span class="badge">PNG</span>
+              </div>
+              <div class="card-body">
+                <svg width="120" height="120" viewBox="0 0 100 100">
+                  <rect width="100" height="100" fill="#02041a"/>
+                  <circle cx="50" cy="50" r="30" fill="#D98E32"/>
+                  <polygon points="50,30 62,50 50,70 38,50" fill="#50FA7B"/>
+                  <circle cx="50" cy="50" r="5" fill="#000027"/>
+                </svg>
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="card-head">
+                <span>VECTOR · 47 SHAPES</span>
+                <span class="badge">SVG · 18.4 KB</span>
+              </div>
+              <div class="card-body">
+                <svg width="120" height="120" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="30" fill="none" stroke="#D98E32" stroke-width="0.6"/>
+                  <polygon points="50,30 62,50 50,70 38,50" fill="none" stroke="#50FA7B" stroke-width="0.6"/>
+                  <circle cx="50" cy="50" r="5" fill="none" stroke="#8BE9FD" stroke-width="0.6"/>
+                  <g fill="#50FA7B">
+                    <circle cx="50" cy="30" r="0.6"/><circle cx="62" cy="50" r="0.6"/>
+                    <circle cx="50" cy="70" r="0.6"/><circle cx="38" cy="50" r="0.6"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="metrics-row">
+              <div class="metric"><span class="lab">Shapes</span><span class="val">47</span></div>
+              <div class="metric"><span class="lab">Max dev</span><span class="val">0.4 px</span></div>
+              <div class="metric"><span class="lab">Time</span><span class="val">412 ms</span></div>
+            </div>
+            <div class="export-row">
+              <button class="btn ghost">Tweak</button>
+              <button class="btn primary">Save SVG</button>
+            </div>
+          </div>
+        </div>
+        <div class="nav-tabs">
+          <div class="nav-item active">
+            <div class="icon">◉</div>
+            <div>Trace</div>
+          </div>
+          <div class="nav-item">
+            <div class="icon">▱↑</div>
+            <div>Upscale</div>
+          </div>
+          <div class="nav-item">
+            <div class="icon">⊞</div>
+            <div>Cabinet</div>
+          </div>
+          <div class="nav-item">
+            <div class="icon">⚙</div>
+            <div>Settings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption">
+    <strong>Notes.</strong> Left phone: home / picker. Drop zone, four action cards (Vectorize / Upscale /
+    Combine / Cabinet), bottom nav tabs. Right phone: result screen with stacked source + vector cards,
+    metrics row, and Tweak / Save actions. Material Design components themed with the §8 palette.
+    Permissions are requested lazily — the camera permission only fires when the user taps the camera
+    pickers icon, never at app launch (Standard §6).
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- 4. BOT MOCKUP                                            -->
+<!-- ======================================================== -->
+<section class="section">
+  <header>
+    <h2>4. Bot — caliper-foundry-bot (Poe / Discord / Slack / Telegram + MCP)</h2>
+    <p>HTTP + MCP server with thin per-platform adapters. Same JSON envelope as desktop and mobile, wrapped in chat.</p>
+  </header>
+
+  <div class="chat">
+    <div class="chat-head">
+      <div class="avatar">⚙</div>
+      <div>
+        <div class="name">@caliper-foundry</div>
+        <div class="status">● Online · self-hosted · CoreML NPU available</div>
+      </div>
+    </div>
+    <div class="chat-body">
+
+      <div class="msg user">
+        <div class="who">MJ</div>
+        <div>
+          <div class="body">
+            @caliper-foundry vectorize <code style="color:var(--liquid-coolant);background:rgba(0,0,0,0.3);padding:2px 4px;border-radius:3px">https://i.example.com/logo.png</code>
+          </div>
+          <div class="meta" style="text-align:right">14:29:58</div>
+        </div>
+      </div>
+
+      <div class="msg bot">
+        <div class="who">F</div>
+        <div>
+          <div class="body">
+            📥 Received <em>logo.png</em> · 1024 × 1024 · 64 KB<br>
+            🔬 <span style="color:var(--radium-green)">Assayer</span>: <em>logo</em> class · 16 effective colors · sharp edges · 4-fold symmetry detected<br>
+            ⚙️ Tracing on <span style="color:var(--liquid-coolant)">CoreML NPU</span> with <em>spline</em> mode + RANSAC primitives…
+          </div>
+          <div class="meta">14:29:59 · 1 second elapsed</div>
+        </div>
+      </div>
+
+      <div class="msg bot">
+        <div class="who">F</div>
+        <div>
+          <div class="body">
+            ✅ <span style="color:var(--radium-green)">Done in 412 ms</span> — 47 shapes, max deviation 0.42 px, 18.4 KB.<br>
+            <span class="file">logo.svg</span>
+            <span class="file">logo.pdf</span>
+            <span class="file">logo.dxf</span><br>
+            <em style="font-size:11px;color:var(--steel-blue)">Reply with</em>
+            <code>tweak colors=8</code>
+            <em style="font-size:11px;color:var(--steel-blue)">or</em>
+            <code>upscale 4x then trace</code>
+            <em style="font-size:11px;color:var(--steel-blue)">to refine.</em>
+          </div>
+          <div class="meta">14:30:00</div>
+        </div>
+      </div>
+
+      <div class="msg user">
+        <div class="who">MJ</div>
+        <div>
+          <div class="body">upscale 4x then trace</div>
+          <div class="meta" style="text-align:right">14:30:14</div>
+        </div>
+      </div>
+
+      <div class="msg bot">
+        <div class="who">F</div>
+        <div>
+          <div class="body">
+            🔁 Combined job: Real-ESRGAN-x4 → trace<br>
+            ⚙️ Upscaling on NPU…<span style="color:var(--steel-blue)">[████████░░] 83%</span>
+          </div>
+          <div class="meta">14:30:15 · 1.4 s elapsed</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Type a command, drop a file, or use /help …">
+      <button class="btn primary">↑</button>
+    </div>
+  </div>
+
+  <div class="caption">
+    <strong>Notes.</strong> Same JSON envelope as the other shells, wrapped in the chat platform's
+    file-attachment primitive. Multi-format outputs (SVG / PDF / DXF) attached as separate files.
+    Inline tips suggest follow-up commands (<em>tips-thinking</em> hints per Steelbore Agentic CLI §3).
+    The bot self-hosts by default — the example here is "self-hosted" with local NPU; the same code
+    can be deployed on a managed Foundry endpoint without any wire-format change.
+  </div>
+</section>
+
+<!-- ======================================================== -->
+<!-- 5. ARCHITECTURE                                          -->
+<!-- ======================================================== -->
+<section class="section">
+  <header>
+    <h2>5. Architecture at a glance</h2>
+    <p>One Rust core, four shells. The protocol crate is the contract; adding a new shell never touches the engine.</p>
+  </header>
+
+  <div class="arch">
+<pre>┌──────────────────────────────────────────────────────────────────────────┐
+│                          CALIPER FOUNDRY                                 │
+│                                                                          │
+│  <span style="color:#8BE9FD">┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐</span>  │
+│  <span style="color:#8BE9FD">│   WEB (PWA)  │  │   DESKTOP    │  │   MOBILE     │  │     BOT      │</span>  │
+│  <span style="color:#8BE9FD">│  Leptos+WASM │  │  Tauri 2.x   │  │ Flutter+FFI  │  │ HTTP + MCP   │</span>  │
+│  <span style="color:#8BE9FD">└──────┬───────┘  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘</span>  │
+│         │                 │                 │                 │          │
+│         └────────┬────────┴────────┬────────┴────────┬────────┘          │
+│                  │                 │                 │                   │
+│         <span style="color:#50FA7B">┌────────▼─────────────────▼─────────────────▼────────┐</span>          │
+│         <span style="color:#50FA7B">│       caliper-foundry-core (job mgmt + cabinet)     │</span>          │
+│         <span style="color:#50FA7B">└────────────────────────┬────────────────────────────┘</span>          │
+│                                  │                                       │
+│         <span style="color:#D98E32">┌────────────────────────▼────────────────────────────┐</span>          │
+│         <span style="color:#D98E32">│       caliper-foundry-protocol (shared types)       │</span>          │
+│         <span style="color:#D98E32">└────────────────────────┬────────────────────────────┘</span>          │
+└────────────────────────────────────┼─────────────────────────────────────┘
+                                     │
+                <span style="color:#4B7EB0">┌────────────────────▼────────────────────┐</span>
+                <span style="color:#4B7EB0">│   CALIPER ENGINE (caliper-trace, v2.0)  │</span>
+                <span style="color:#4B7EB0">│   Crucible · Assayer · Smelt · Etch ·   │</span>
+                <span style="color:#4B7EB0">│   Burin · Temper · Weld · Cast ·        │</span>
+                <span style="color:#4B7EB0">│   Bellows (GPU) · Touchstone (NPU) ·    │</span>
+                <span style="color:#4B7EB0">│   Anvil (SIMD)                          │</span>
+                <span style="color:#4B7EB0">└─────────────────────────────────────────┘</span>
+</pre>
+  </div>
+
+  <div class="caption">
+    <strong>Eight new crates total.</strong> Four shells (web, desktop, mobile, bot), the core, the
+    protocol, the cabinet (history archive), and the billet (shared static assets — palette, fonts,
+    icons, AGENTS.md template). The Caliper engine is unchanged from its v2.0 PRD.
+  </div>
+</section>
+
+<footer>
+  <div>― <span class="forge">FORGED IN STEELBORE</span> ―</div>
+  <div style="margin-top:12px;font-size:10px">2026-05-04T00:00:00Z · GPL-3.0-or-later · Mohamed Hammad</div>
+</footer>
+
+</div>
+</body>
+</html>

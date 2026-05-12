@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-temper — Path fitting (O(n) Bézier; corner detection; primitive RANSAC).
+# See PRD §8.6.
+
+[package]
+name        = "caliper-temper"
+description = "Path fitting stage for Caliper — O(n) Bézier with RANSAC primitives."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+caliper-anvil = { workspace = true }
+rayon         = { workspace = true }
+thiserror     = { workspace = true }
+
+[lints]
+workspace = true

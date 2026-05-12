@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+msrv = "1.82.0"
+
+# Per Microsoft Pragmatic Rust Guidelines M-CONCISE-NAMES we accept short
+# identifiers in tight scopes; widen the default cognitive-complexity bar so
+# SIMD kernels (anvil) and pipeline stages can express dense numeric work
+# without bogus lints. Tighten on a per-crate basis if needed.
+cognitive-complexity-threshold = 35
+too-many-arguments-threshold = 9
+type-complexity-threshold = 350
+
+# Public types like `OkLab` are domain terms — silence the proper-case lint.
+allowed-scripts = ["Latin"]

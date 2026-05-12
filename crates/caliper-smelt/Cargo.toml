@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-smelt — Color quantization (k-means OKLab, median-cut, octree).
+# See PRD §8.3.
+
+[package]
+name        = "caliper-smelt"
+description = "Color quantization for Caliper — k-means OKLab, median-cut, octree."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+caliper-anvil = { workspace = true }
+image         = { workspace = true }
+rayon         = { workspace = true }
+thiserror     = { workspace = true }
+
+[dev-dependencies]
+proptest = { workspace = true }
+
+[lints]
+workspace = true

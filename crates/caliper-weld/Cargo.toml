@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-weld — Tile-boundary stitching and layer assembly. See PRD §8.7.
+
+[package]
+name        = "caliper-weld"
+description = "Tile-boundary stitching and layer assembly for Caliper."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+rayon     = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

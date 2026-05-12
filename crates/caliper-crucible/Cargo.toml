@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-crucible — Pipeline orchestrator. Drives the seven-stage DAG.
+# See PRD §5 and PRD §8.
+
+[package]
+name        = "caliper-crucible"
+description = "Pipeline orchestrator for Caliper. Seven-stage DAG scheduler."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+caliper-anvil  = { workspace = true }
+caliper-assayer = { workspace = true }
+caliper-smelt  = { workspace = true }
+caliper-etch   = { workspace = true }
+caliper-burin  = { workspace = true }
+caliper-temper = { workspace = true }
+caliper-weld   = { workspace = true }
+caliper-cast   = { workspace = true }
+thiserror      = { workspace = true }
+image          = { workspace = true }
+rayon          = { workspace = true }
+tracing        = { workspace = true }
+
+[lints]
+workspace = true

@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper — Top-level binary. POSIX-compliant CLI + TUI dispatcher + MCP server.
+# See PRD §9.
+
+[package]
+name        = "caliper"
+description = "Caliper raster-to-vector tracing engine — CLI, TUI, MCP server."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+categories             = ["graphics", "command-line-utilities"]
+keywords               = ["vector", "tracing", "svg", "cli"]
+
+[[bin]]
+name = "caliper"
+path = "src/main.rs"
+
+[features]
+default = []
+gpu     = ["caliper-trace/gpu"]
+npu     = ["caliper-trace/npu"]
+all     = ["gpu", "npu"]
+
+[dependencies]
+caliper-trace      = { workspace = true }
+caliper-tui        = { workspace = true }
+anyhow             = { workspace = true }
+clap               = { workspace = true }
+jiff               = { workspace = true }
+schemars           = { workspace = true }
+serde              = { workspace = true }
+serde_json         = { workspace = true }
+serde_yaml         = { workspace = true }
+tracing            = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[lints]
+workspace = true

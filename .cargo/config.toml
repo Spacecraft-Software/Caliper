@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Per-developer cargo overrides. Profile-specific RUSTFLAGS so the four
+# release tiers from PRD §14.1 (portable / avx / avx512 / native) target
+# the right microarchitecture without polluting Tier-1 CI builds.
+
+[build]
+# Default jobs = logical CPUs; let cargo decide.
+
+# Microsoft x86_64 microarchitecture levels (see PRD §14.1 + 6.1.2).
+[target.'cfg(target_arch = "x86_64")']
+# No global rustflags — each release-* profile sets its own via env in CI.
+
+[alias]
+xtask  = "run -p xtask --release --"
+deny   = "deny --hide-inclusion-graph"
+audit  = "deny check advisories"

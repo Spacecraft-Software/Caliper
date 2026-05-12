@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-anvil — SIMD primitives layer. The ONLY crate in the Caliper workspace
+# permitted to contain `unsafe` blocks. See PRD §6.1.2 and PRD §12.
+
+[package]
+name        = "caliper-anvil"
+description = "SIMD kernels for Caliper (std::simd portable + std::arch intrinsics)."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+categories             = ["graphics", "no-std"]
+keywords               = ["simd", "kernel", "tracing", "vectorization"]
+
+[features]
+default = []
+
+[dependencies]
+
+[dev-dependencies]
+proptest = { workspace = true }
+criterion = { workspace = true }
+
+[lints]
+workspace = true

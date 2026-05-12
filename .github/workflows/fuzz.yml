@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Nightly fuzz job. Runs cargo-fuzz against decoder targets and anvil kernels.
+
+name: fuzz
+
+on:
+  schedule:
+    # 04:00 UTC every day
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  fuzz:
+    name: fuzz ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - decode_png
+          - decode_jpeg
+          - decode_webp
+          - anvil_color_distance
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@nightly
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo install cargo-fuzz --locked
+      - name: fuzz ${{ matrix.target }} (5 min)
+        run: |
+          if [ -d fuzz ]; then
+            cargo +nightly fuzz run ${{ matrix.target }} -- -max_total_time=300
+          else
+            echo "fuzz/ directory not yet scaffolded — see TODO.md §10"
+          fi

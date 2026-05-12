@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# caliper-touchstone — NPU/ML backend (ort + ONNX Runtime). Optional, feature-gated.
+# See PRD §6.3.
+
+[package]
+name        = "caliper-touchstone"
+description = "NPU/ML backend for Caliper — ONNX Runtime via the `ort` crate."
+version.workspace      = true
+edition.workspace      = true
+rust-version.workspace = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+readme.workspace       = true
+
+[dependencies]
+ort       = { workspace = true }
+ndarray   = { workspace = true }
+blake3    = { workspace = true }
+serde     = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

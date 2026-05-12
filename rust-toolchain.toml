@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+[toolchain]
+# Minimum Rust that supports Edition 2024 (stabilised in 1.85). The PRD's
+# original MSRV declaration of 1.82.0 was inconsistent with its Edition 2024
+# requirement; this pin resolves the inconsistency in favour of Edition 2024.
+channel = "1.88.0"
+# Miri only ships on nightly; the Miri CI job in .github/workflows/ci.yml
+# installs a nightly toolchain on demand for `cargo miri test -p caliper-anvil`.
+components = ["rustfmt", "clippy", "rust-src"]
+profile = "default"
