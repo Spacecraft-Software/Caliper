@@ -119,7 +119,7 @@ description, compared against the targets in [PRD §6.5](PRD.md#65-benchmark-tar
 
 ## Code Style
 
-- All Rust code follows the [Steelbore Rust Guidelines](https://github.com/UnbreakableMJ/rust-guidelines)
+- All Rust code follows the [Steelbore Rust Guidelines](https://github.com/Steelbore/rust-guidelines)
   (Microsoft Pragmatic Rust Guidelines + Steelbore overlays). The lints in
   workspace `Cargo.toml` enforce most of this mechanically.
 - All source files start with `// SPDX-License-Identifier: GPL-3.0-or-later`.

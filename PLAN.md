@@ -431,7 +431,7 @@ Items surfaced during implementation that need decisions. Populated as work prog
 ## 11. References
 
 - `PRD.md` v2.0 — product requirements (this plan's source of truth)
-- The Steelbore Standard v1.0 — `github.com/UnbreakableMJ/steelbore-standard`
+- The Steelbore Standard v1.0 — `github.com/Steelbore/steelbore-standard`
 - Steelbore SFRS v1.0.0 — Dual-Mode Self-Documenting CLI Framework
 - Steelbore Agentic CLI Standard v1.0
 - Microsoft Pragmatic Rust Guidelines — `microsoft.github.io/rust-guidelines`

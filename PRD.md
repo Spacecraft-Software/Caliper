@@ -902,9 +902,9 @@ Per SFRS §9 + Agentic §9 (additional CLI-specific gates):
 
 ## 19. References
 
-- The Steelbore Standard v1.0 — `github.com/UnbreakableMJ/steelbore-standard`
+- The Steelbore Standard v1.0 — `github.com/Steelbore/steelbore-standard`
 - Steelbore SFRS v1.0.0 — Dual-Mode Self-Documenting CLI Framework
-- Steelbore Rust Guidelines — `github.com/UnbreakableMJ/rust-guidelines`
+- Steelbore Rust Guidelines — `github.com/Steelbore/rust-guidelines`
 - Selinger, P. — *Potrace: a polygon-based tracing algorithm* (2003)
 - VTracer — `github.com/visioncortex/vtracer`
 - Suzuki, S. & Abe, K. — *Topological Structural Analysis of Digitized Binary Images by Border Following* (1985)
