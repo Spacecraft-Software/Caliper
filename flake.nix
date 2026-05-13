@@ -89,7 +89,7 @@
 
         # Stub package — actual release builds come from `cargo build` driven
         # by .github/workflows/release.yml; v1.0.0 §6.6 of TODO.md installs the
-        # NixOS module under github:UnbreakableMJ/bravais.
+        # NixOS module under github:Steelbore/Bravais.
         packages = { };
       });
 }
