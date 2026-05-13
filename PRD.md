@@ -20,7 +20,7 @@ Fonts: Share Tech Mono (headings), Inconsolata (body)
 | License          | GPL-3.0-or-later                               |
 | Canonical Name   | `caliper`                                      |
 | Crate            | `caliper-trace`                                |
-| Repository       | `github.com/UnbreakableMJ/caliper`             |
+| Repository       | `github.com/Steelbore/Caliper`                 |
 | Standard         | The Steelbore Standard v1.0 + SFRS v1.0.0      |
 | Status           | Draft for review                               |
 
@@ -523,7 +523,7 @@ All non-zero exits emit a structured error object on stderr.
     "hint": "Run 'caliper inspect --hardware --json' to see available backends, or use '--accelerator cpu' to fall back to CPU-only mode.",
     "timestamp": "2026-04-30T14:30:00Z",
     "command": "caliper trace photo.jpg --accelerator gpu",
-    "docs_url": "https://github.com/UnbreakableMJ/caliper/docs/hardware.md#gpu"
+    "docs_url": "https://github.com/Steelbore/Caliper/docs/hardware.md#gpu"
   }
 }
 ```
