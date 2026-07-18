@@ -20,7 +20,7 @@ Fonts: Share Tech Mono (headings), Inconsolata (body)
 | License          | GPL-3.0-or-later                                       |
 | Parent Project   | Caliper (`caliper-trace` v2.0 PRD)                     |
 | Crates           | `caliper-foundry-{protocol,core,web,desktop,mobile,bot,cabinet,billet}` |
-| Standard         | The Steelbore Standard v1.0 + SFRS v1.0.0              |
+| Standard         | The Steelbore Standard v1.0 + the CLI Standard v1.0.0  |
 | Status           | Draft for review                                       |
 
 ---
@@ -438,7 +438,7 @@ Per Steelbore Standard §13 audit gate, this PRD satisfies:
 - ✅ **§10** Material Design components (Flutter Material, Tauri Material via Iced or fluent components); WCAG 2.1 AA contrast verified
 - ✅ **§11** ISO 8601 dates, 24h time, UTC timestamps, metric units throughout the UI
 
-Per SFRS §9 + Agentic §9 (CLI-specific gates inherited from the bot adapter and shared protocol):
+Per the CLI Standard §9 + Agentic §9 (CLI-specific gates inherited from the bot adapter and shared protocol):
 
 - ✅ ISO 8601 + UTC timestamps everywhere
 - ✅ UTF-8 without BOM
@@ -523,7 +523,7 @@ Per SFRS §9 + Agentic §9 (CLI-specific gates inherited from the bot adapter an
 ### 13.1 Steelbore-Internal
 
 - The Steelbore Standard v1.0 — `github.com/UnbreakableMJ/steelbore-standard`
-- Steelbore SFRS v1.0.0 — Dual-Mode Self-Documenting CLI Framework
+- Steelbore CLI Standard v1.0.0 — Dual-Mode Self-Documenting CLI Framework
 - Steelbore Rust Guidelines — `github.com/UnbreakableMJ/rust-guidelines`
 - Caliper PRD v2.0 — parent document
 - Mawaqit (Steelbore Flutter + Rust + libmawaqit precedent)
